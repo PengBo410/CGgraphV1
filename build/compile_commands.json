@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/omnisky/.vscode/CGgraph/build",
+  "command": "/usr/bin/g++  -DMY_CPP_CU_LIB_EXPORTS -I/usr/local/cuda/include -I../src -I../project  -g -fPIC   -o CMakeFiles/MY_CPP_CU_LIB.dir/project/flag.cpp.o -c /home/omnisky/.vscode/CGgraph/project/flag.cpp",
+  "file": "/home/omnisky/.vscode/CGgraph/project/flag.cpp"
+}
+]
