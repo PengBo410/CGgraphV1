@@ -1,12 +1,12 @@
-# CGgraphV1.0 #
+# CGgraphV1.0
 
 CGgraph is an ultra-fast graph processing system on a modern commodity machine with the CPU-GPU co-processor, it provides an efficient CPU-GPU cooperative processing scheme. First, CGgraph follows the principle of *load once and multiple times* to extract a subgraph and load it into GPU global memory. Then, CGgraph proposes on-demand task allocation to process graph algorithm by efficient CPU-GPU cooperative processing scheme. Furthermore, both the edge-level and vertex-level workload balance have been explicitly solved in it. 
 
 ---
 
-## Getting Started ##
+## Getting Started
 
-### 1. packages ###
+### 1. packages 
 Before building CGgraph ensure that your system has:
 - CUDA 11.7 +
 - GCC 9.1.0 +
@@ -20,10 +20,8 @@ For TBB, you can use the following command to install
 `sudo apt-get install libtbb-dev`
 For gflag, you can git clone from [gflag](https://github.com/gflags/gflags.git).
 
----
-
-### 2. Compilation ###
-```cpp
+### 2. Compilation
+``````
 git clone https://github.com/PengBo410/CGgraphV1.git
 cd CGgraphV1
 mkdir build && cd build
@@ -31,11 +29,9 @@ cmake ..
 make -j
 ``````
 
----
-
-### 3. Input Arg ###
+### 3. Input Arg
 You can use 'CGgraph --help' get follow info:
-```cpp
+``````
 -algorithm (The Algorithm To Be Run: [0]:BFS, [1]:SSSP, [2]:WCC, [3]:PageRank)
 -computeEngine (The Compute Engine: ([0]: Single-core, [1]Multi-cores, [2]:Single-GPU, [3]Co-CPU/GPU)
 -gpuImple (The GPU Implement Type: [0]:CAT, [1]:COALESCE_CHUNK)
@@ -45,7 +41,7 @@ You can use 'CGgraph --help' get follow info:
 -root (The Scr For BFS/SSSP Or MaxIte For PageRank)
 -runs (The Number Of Times The Algorithm Needs To Run)
 -useDeviceId (The GPU ID To Be Used)
-```
+``````
 Here are explanations for several important parameters:
 
 - **algorithm**: Specifies the graph algorithm to be used. In the current version, we provide BFS, SSSP, WCC and PageRank.
