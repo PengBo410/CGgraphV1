@@ -10,7 +10,7 @@
 #define TOTAL_DEBUG_COLOR // 带颜色的Console打印
 
 #define ISCONSOLE 1 // 是否输出到Console
-#define ISLOG 1     // 是否输出到Log
+#define ISLOG 0     // 是否输出到Log
 
 #define CONSOLE_COLOR 1 // 带颜色的Console打印
 

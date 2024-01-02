@@ -85,17 +85,6 @@ void main_enginer()
         graph->setMonitor(monitor);
         profile<Standalone::GraphCore>(graph, graphName, orderMethod, old2new, csrResult.vertexNum, algorithm, root, runs, rootTranfer, logResult,
                                        false);
-        std::string algorithmName = Algorithm_type_name[SCI32(algorithm)];
-        std::string resultFile = "";
-        if ((algorithm == Algorithm_type::WCC) || (algorithm == Algorithm_type::PageRank))
-        {
-            resultFile = get_BaseCheckFile_path() + algorithmName + "/" + graphName + "_" + algorithmName + ".bin";
-        }
-        else
-        {
-            resultFile = get_BaseCheckFile_path() + algorithmName + "/" + graphName + "_" + algorithmName + "_" + std::to_string(root) + ".bin";
-        }
-        graph->saveResultToFile(resultFile);
     }
 
     //>  ComputeEngine_type::MULTI_CORE
@@ -117,7 +106,7 @@ void main_enginer()
         assert_msg(freeMem > 0, "Too Little Available GPU Memory");
         freeGPUMemory.getGPUMemory_info();
 
-        SubgraphExtraction subgraphExtraction(csrResult, GB(10), algorithm, gpuMemory, useDeviceId);
+        SubgraphExtraction subgraphExtraction(csrResult, freeMem, algorithm, gpuMemory, useDeviceId);
         subgraphExtraction.setMonitor(monitor);
         csrResult.clearCSR();
         Coprocess_result_type copResult = subgraphExtraction.getCoProcessResult();

@@ -33,8 +33,6 @@ class Compute_degree
 
         noZeroOutDegreeNum = csrResult.noZeroOutDegreeNum;
         zeroOutDegreeNum = vertexNum - noZeroOutDegreeNum;
-        Msg_info("zeroOutDegreeNum = %zu (%.2lf), noZeroOutDegreeNum = %zu (%.2f)", static_cast<uint64_t>(zeroOutDegreeNum),
-                 (double)zeroOutDegreeNum / vertexNum * 100, static_cast<uint64_t>(noZeroOutDegreeNum), (double)noZeroOutDegreeNum / vertexNum * 100);
 
         timer constructTime;
         initGraph();

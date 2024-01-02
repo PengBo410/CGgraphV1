@@ -238,13 +238,9 @@ class GraphCore
                 break;
             }
 
-            Msg_node("\t[Single-Core]: The (%d) iteration, Used time: = %.2lf (ms), activeNum = %zu", ite, singTime.get_time_ms(),
-                     SCU64(local_activeNum));
-
             if (local_activeNum == 0)
             {
                 processTime = iteTime.get_time_ms();
-                Msg_node("[Complete]: %s -> iteration: %3d, Used time:: %.6lf (ms)", Algorithm_type_name[SCI32(algorithm)], ite, processTime);
                 break;
             }
 

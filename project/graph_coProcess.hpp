@@ -516,13 +516,9 @@ class GraphCG
             Log_info("The ite[%d]: parallel_popcount, activeVertexNum_total = %zu, Used time: %.2lf (ms)", ite, SCU64(activeVertexNum_total),
                      tmpTime.get_time_ms());
 
-            Msg_node("\t[Co-process]: The (%d) iteration, Used time: = %.2lf (ms), activeNum = %zu", ite, singTime.get_time_ms(),
-                     SCU64(activeVertexNum_total));
-
             if (activeVertexNum_total == 0 || isMaxIteCount)
             {
                 processTime = iteTime.get_time_ms();
-                Msg_node("[Complete]: %s -> iteration: %3d, Used time:: %.6lf (ms)", Algorithm_type_name[SCI32(algorithm)], ite, processTime);
                 setGPUCommand(GPU_state_type::EXIT);
                 agent.join();
                 break;

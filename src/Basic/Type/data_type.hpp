@@ -9,8 +9,8 @@ typedef uint32_t degree_type;
 
 typedef uint32_t countl_type;
 
-// typedef uint32_t vertex_data_type;
-typedef float vertex_data_type; // PageRank
+typedef uint32_t vertex_data_type;
+// typedef float vertex_data_type; // PageRank
 
 typedef vertex_id_type u1;
 typedef int order_type;

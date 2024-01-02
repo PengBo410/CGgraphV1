@@ -252,12 +252,9 @@ class GraphDevice
             }
 
             CUDA_CHECK(D2H(common, common_device, 1)); // D2H
-            Msg_node("\t[GPU]: The (%2d) iteration, Used time: = %7.2lf (ms), worklistCount = %zu", ite, singTime.get_time_ms(), SCU64(common[0]));
-
             if ((!common[0]) || isMaxIteCount)
             {
                 processTime = iteTime.get_time_ms();
-                Msg_node("[Complete]: %s -> iteration: %2d, Used time:: %5.2lf (ms)", Algorithm_type_name[SCI32(algorithm)], ite, processTime);
                 break;
             }
         }
